@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6246ea" />
+    <title>Maths en Mission</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Retour à l'accueil"><span>✦</span> Maths en Mission</a>
+        <div class="star-bank" aria-label="Étoiles gagnées"><span>⭐</span><b id="starCount">0</b><span class="star-label">étoiles</span></div>
+      </header>
+
+      <section id="homeView" class="view">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">Bonjour, champion·ne !</p>
+            <h1>Prêt·e pour une<br><em>mission maths ?</em></h1>
+            <p class="intro">Une bonne réponse à la fois, et les étoiles arrivent !</p>
+          </div>
+          <div class="mascot" aria-hidden="true">🚀</div>
+        </div>
+        <section class="reward-strip" aria-labelledby="rewardTitle">
+          <div><p class="eyebrow" id="rewardTitle">Prochaine récompense</p><strong id="rewardName">Badge Explorateur</strong><span id="rewardProgress">Encore 5 étoiles !</span></div>
+          <div class="reward-track"><div id="rewardBar"></div></div>
+          <div class="reward-icon" id="rewardIcon">🧭</div>
+        </section>
+        <h2>Choisis ta mission</h2>
+        <div class="mission-grid" id="missionGrid"></div>
+        <section class="collection" aria-labelledby="collectionTitle">
+          <div><p class="eyebrow" id="collectionTitle">Collection de badges</p><h2>Mes récompenses</h2></div>
+          <div id="badges" class="badges"></div>
+        </section>
+      </section>
+
+      <section id="gameView" class="view hidden" aria-live="polite">
+        <button class="back-button" id="backButton" type="button">← Toutes les missions</button>
+        <div class="game-head">
+          <div><p class="eyebrow" id="gameKicker">Mission</p><h1 id="gameTitle">Calcul</h1></div>
+          <div class="streak" id="streak">🔥 Série : 0</div>
+        </div>
+        <div class="mode-switch" id="modeSwitch" aria-label="Choisir le mode"></div>
+        <div class="question-card">
+          <p class="question-label" id="questionLabel">Résous le calcul</p>
+          <div class="question" id="question"></div>
+          <p class="hint" id="hint"></p>
+          <form id="answerForm" class="answer-zone" autocomplete="off"></form>
+          <p id="feedback" class="feedback" role="status"></p>
+        </div>
+        <p class="tip">💡 Astuce : prends ton temps, puis vise la série !</p>
+      </section>
+    </main>
+    <dialog id="celebration"><div class="celebration"><div class="big-emoji">🏆</div><h2>Nouveau badge !</h2><p id="celebrationText"></p><button type="button" id="closeDialog">Génial !</button></div></dialog>
+    <script src="exercises.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
